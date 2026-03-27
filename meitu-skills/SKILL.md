@@ -164,37 +164,30 @@ When execution fails, always return actionable guidance instead of raw errors:
 - If `error_type` is `CREDENTIALS_MISSING`, return the console link and guide the user to configure AK/SK first, then retry.
 - If `error_type` is `AUTH_ERROR`, return the console link and guide the user to verify AK/SK and authorization status first, then retry.
 
-## 🔑 获取 AK/SK 凭证
+## 🔑 配置 AK/SK 凭证
 
-使用本技能前，需要先获取美图开放平台的 API 凭证：
+使用本技能前，需要先配置美图开放平台的 API 凭证。
 
-### 步骤 1：访问控制台
-👉 **https://www.miraclevision.com/open-claw**
+### 步骤 1：获取凭证
 
-### 步骤 2：注册/登录账号
-- 新用户需先注册账号
-- 已有账号直接登录
+1. 访问美图开放平台：👉 **https://www.miraclevision.com/open-claw**
+2. 注册/登录账号
+3. 点击「创建应用」，填写应用名称
+4. 创建成功后，在应用详情页获取 **Access Key (AK)** 和 **Secret Key (SK)**
 
-### 步骤 3：创建应用获取凭证
-1. 进入控制台后，点击「创建应用」
-2. 填写应用名称和描述
-3. 创建成功后，在应用详情页获取：
-   - **Access Key (AK)**
-   - **Secret Key (SK)**
+### 步骤 2：告诉我你的凭证
 
-### 步骤 4：配置凭证
+**直接把 AK 和 SK 发给我，我会帮你自动配置：**
 
-**方式一：环境变量（推荐）**
-```bash
-export MEITU_OPENAPI_ACCESS_KEY="your-access-key"
-export MEITU_OPENAPI_SECRET_KEY="your-secret-key"
+```
+我的美图凭证：
+AK: xxxxxxxxxxxxxxxx
+SK: xxxxxxxxxxxxxxxx
 ```
 
-**方式二：凭证文件**
-```bash
-echo '{"accessKey":"your-access-key","secretKey":"your-secret-key"}' > ~/.meitu/credentials.json
-chmod 600 ~/.meitu/credentials.json
-```
+我会自动保存到安全位置，之后你就可以正常使用所有美图功能了！
+
+> ⚠️ **安全提示**：凭证会保存在本地，不会上传到任何服务器。
 
 ---
 
